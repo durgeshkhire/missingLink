@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/missinglink
+    username: postgres
+    password: admin123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: khiredurgesh@gmail.com
+    password: drmqdjdgphryhbsk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+
+
+
+app:
+  jwt:
+    secret: mysupersecuresecretkeythatismorethan32characterslong
+    expiration-ms: 86400000
