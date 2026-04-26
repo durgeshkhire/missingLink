@@ -18,7 +18,7 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    // POST /api/v1/reviews — submit a review
+    // POST /api/reviews — submit a review
     @PostMapping
     public ResponseEntity<ApiResponse<ReviewResponse>> createReview(
             @Valid @RequestBody CreateReviewRequest request) {
@@ -27,7 +27,7 @@ public class ReviewController {
                 ApiResponse.success(response, "Review submitted successfully"));
     }
 
-    // GET /api/v1/reviews/user/{userId} — get reviews for a user
+    // GET /api/reviews/user/{userId} — get reviews for a user
     @GetMapping("/user/{userId}")
     public ResponseEntity<ApiResponse<List<ReviewResponse>>> getReviewsForUser(
             @PathVariable UUID userId) {
@@ -36,7 +36,7 @@ public class ReviewController {
                 ApiResponse.success(reviews, "Reviews fetched successfully"));
     }
 
-    // GET /api/v1/reviews/by/{userId} — get reviews written by a user
+    // GET /api/reviews/by/{userId} — get reviews written by a user
     @GetMapping("/by/{userId}")
     public ResponseEntity<ApiResponse<List<ReviewResponse>>> getReviewsByUser(
             @PathVariable UUID userId) {
