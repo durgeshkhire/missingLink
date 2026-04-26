@@ -27,7 +27,7 @@ public class BookingController {
                 ApiResponse.success(response, "Booking request sent successfully"));
     }
 
-    // PATCH /api/v1/bookings/{id}/approve — driver approves
+    // PATCH /api/bookings/{id}/approve — driver approves
     @PatchMapping("/{id}/approve")
     public ResponseEntity<ApiResponse<BookingResponse>> approveBooking(
             @PathVariable UUID id) {
@@ -36,7 +36,7 @@ public class BookingController {
                 ApiResponse.success(response, "Booking approved successfully"));
     }
 
-    // PATCH /api/v1/bookings/{id}/reject — driver rejects
+    // PATCH /api/bookings/{id}/reject — driver rejects
     @PatchMapping("/{id}/reject")
     public ResponseEntity<ApiResponse<BookingResponse>> rejectBooking(
             @PathVariable UUID id) {
@@ -45,7 +45,7 @@ public class BookingController {
                 ApiResponse.success(response, "Booking rejected"));
     }
 
-    // PATCH /api/v1/bookings/{id}/cancel — rider cancels
+    // PATCH /api/bookings/{id}/cancel — rider cancels
     @PatchMapping("/{id}/cancel")
     public ResponseEntity<ApiResponse<BookingResponse>> cancelBooking(
             @PathVariable UUID id) {
