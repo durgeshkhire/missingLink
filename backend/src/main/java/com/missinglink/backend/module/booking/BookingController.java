@@ -54,7 +54,7 @@ public class BookingController {
                 ApiResponse.success(response, "Booking cancelled successfully"));
     }
 
-    // GET /api/v1/bookings/ride/{rideId} — driver sees all requests for a ride
+    // GET /api/bookings/ride/{rideId} — driver sees all requests for a ride
     @GetMapping("/ride/{rideId}")
     public ResponseEntity<ApiResponse<List<BookingResponse>>> getBookingsForRide(
             @PathVariable UUID rideId) {
