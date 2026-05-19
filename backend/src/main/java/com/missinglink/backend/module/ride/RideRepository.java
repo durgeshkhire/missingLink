@@ -42,4 +42,19 @@ public interface RideRepository extends JpaRepository<Ride, UUID> {
     List<Ride> findByDriverIdAndStatus(UUID driverId, RideStatus status);
 
     List<Ride> findByStatusOrderByDepartureTimeAsc(RideStatus status);
+
+    // Find all upcoming rides where departure time has passed
+    @Query("""
+    SELECT r FROM Ride r
+    WHERE r.status = :status
+    AND r.departureTime < :now
+""")
+    List<Ride> findExpiredRides(
+            @Param("status") RideStatus status,
+            @Param("now") LocalDateTime now
+    );
+
+    Page<Ride> findByStatusOrderByDepartureTimeAsc(RideStatus status, Pageable pageable);
+
+    boolean existsByVehicleIdAndStatusIn(UUID vehicleId, List<RideStatus> statuses);
 }

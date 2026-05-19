@@ -29,8 +29,10 @@ public class RideController {
                 ApiResponse.success(response, "Ride created successfully"));
     }
     @GetMapping
-    public ResponseEntity<ApiResponse<List<RideResponse>>> getAllUpcomingRides() {
-        List<RideResponse> rides = rideService.getAllUpcomingRides();
+    public ResponseEntity<ApiResponse<Page<RideResponse>>> getAllUpcomingRides(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        Page<RideResponse> rides = rideService.getAllUpcomingRides(page, size);
         return ResponseEntity.ok(
                 ApiResponse.success(rides, "Upcoming rides fetched successfully"));
     }
@@ -73,6 +75,14 @@ public class RideController {
         RideResponse response = rideService.completeRide(id);
         return ResponseEntity.ok(
                 ApiResponse.success(response, "Ride marked as completed"));
+    }
+
+    @PatchMapping("/{id}/start")
+    public ResponseEntity<ApiResponse<RideResponse>> startRide(
+            @PathVariable UUID id) {
+        RideResponse response = rideService.startRide(id);
+        return ResponseEntity.ok(
+                ApiResponse.success(response, "Ride started successfully"));
     }
 
 }

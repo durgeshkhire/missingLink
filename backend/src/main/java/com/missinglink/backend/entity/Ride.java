@@ -63,6 +63,10 @@ public class Ride {
     private String carName;
     private String carNumber;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
+
     @Builder.Default
     private boolean instantBooking = false;
 

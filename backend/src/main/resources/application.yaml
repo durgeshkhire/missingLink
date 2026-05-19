@@ -2,9 +2,9 @@ spring:
   application:
     name: backend
   datasource:
-    url: jdbc:postgresql://localhost:5432/missinglink
-    username: postgres
-    password: admin123
+    url: jdbc:postgresql://ep-raspy-shadow-ao1mq3c3-pooler.c-2.ap-southeast-1.aws.neon.tech/missinglink?sslmode=require
+    username: neondb_owner
+    password: npg_NyconGWA67BY
 
   jpa:
     hibernate:

@@ -15,6 +15,14 @@ public class AuthController {
 
     private final AuthService authService;
 
+//    @PostMapping("/send-motp")
+//    public ResponseEntity<ApiResponse<String>> sendRegisterOtp(
+//            @Valid @RequestBody SendLoginOtpRequest request) {
+//        String message = authService.sendRegisterOtp(request.getPhone());
+//        return ResponseEntity.ok(
+//                ApiResponse.success(message, "OTP sent successfully"));
+//    }
+
     @PostMapping("/register")
     public AuthResponse register(@RequestBody RegisterReq req){
         return authService.register(req);

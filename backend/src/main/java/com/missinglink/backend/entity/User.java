@@ -30,10 +30,10 @@ public class User {
 
     private String bio;
 
-    @Column(nullable = false)
-    private String password;
 
     private String phone;
+
+
 
     @Builder.Default
     @Enumerated(EnumType.STRING)
@@ -46,6 +46,9 @@ public class User {
 
     @Builder.Default
     private boolean emailVerified =false;
+
+    @Column(nullable = false)
+    private String password;
 
     private LocalDateTime createdAt;
 

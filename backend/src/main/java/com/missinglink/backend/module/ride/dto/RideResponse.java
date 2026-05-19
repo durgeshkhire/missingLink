@@ -15,8 +15,8 @@ public class RideResponse {
     private String driverName;
     private String driverAvatarUrl;
     private BigDecimal driverRating;
-    private String carName;
-    private String carNumber;
+//    private String carName;
+//    private String carNumber;
 
     private String originCity;
     private String destinationCity;
@@ -36,4 +36,11 @@ public class RideResponse {
     private String description;
     private boolean instantBooking;
     private LocalDateTime createdAt;
+
+    private UUID vehicleId;
+    private String carName;
+    private String carNumber;
+    private String carType;
+    private String carColor;
+    private int vehicleTotalSeats;
 }

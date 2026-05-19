@@ -44,14 +44,7 @@ public class UserController {
                 ApiResponse.success(response, "Profile updated successfully"));
     }
 
-    // PATCH /api/users/me/change-password — change password
-    @PatchMapping("/me/change-password")
-    public ResponseEntity<ApiResponse<String>> changePassword(
-            @Valid @RequestBody ChangePasswordRequest request) {
-        String message = userService.changePassword(request);
-        return ResponseEntity.ok(
-                ApiResponse.success(message, "Password updated successfully"));
-    }
+
 
     // DELETE /api/users/me — delete my account
     @DeleteMapping("/me")
